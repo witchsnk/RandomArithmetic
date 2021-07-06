@@ -19,7 +19,7 @@ def inputCondition():
     print("输入计算式数值范围（1～100）")
     scope = int(input("请输入：") or 1)
 
-    print("是否允许负数出现(1:允许 0:不允许<默认>")
+    print("是否允许负数出现(1:允许 0:不允许<默认>)")
     neg = int(input("请输入：") or 0)
 
     print("生成试题的数量（默认120道）")
@@ -124,7 +124,7 @@ def getPostfix(expr):
     while not s.empty():
         output.append(s.top())
         s.pop()
-    print(output)
+    # print(output)
     return output
 ## 从栈中连续弹出两个操作数
 def popTwoNumbers(stack):
@@ -143,19 +143,19 @@ def calcResult(expr):
         if c == "+":
             first,second = popTwoNumbers(s)
             s.push(int(second) + int(first))
-            print("{0} + {1}",second,first)
+            # print("{0} + {1}",second,first)
         elif c == "-":
             first,second = popTwoNumbers(s)
             s.push(int(second) - int(first))
-            print("{0} - {1}",second,first)
+            # print("{0} - {1}",second,first)
         elif c == "*":
             first,second = popTwoNumbers(s)
             s.push(int(second) * int(first))
-            print("{0} * {1}",second,first)
+            # print("{0} * {1}",second,first)
         elif c == "/":
             first,second = popTwoNumbers(s)
             s.push(int(second) / int(first))
-            print("{0} / {1}",second,first)
+            # print("{0} / {1}",second,first)
         else:
             s.push(c)
     result = s.top()
